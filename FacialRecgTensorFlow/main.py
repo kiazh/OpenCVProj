@@ -3,7 +3,7 @@ import os
 import random
 import numpy as np
 from matplotlib import pyplot as plt
-
+import uuid
 import tensorflow as tf
 import keras
 from keras.models import Model
@@ -22,7 +22,15 @@ ANC_PATH = os.path.join('data', 'anchor')
 cap = cv2.VideoCapture(0)
 while cap.isOpened():
     ret, frame = cap.read()
-    
+    frame = frame[120:120+250,200:200+250, :]
+    if cv2.waitKey(1) & 0XFF == ord('a'):
+        imgname = os.path.join(ANC_PATH, '{}.jpg'.format(uuid.uuid1()))
+        cv2.imwrite(imgname, frame)
+        
+    if cv2.waitKey(1) & 0XFF == ord('p'):
+        imgname = os.path.join(POS_PATH, '{}.jpg'.format(uuid.uuid1()))
+        cv2.imwrite(imgname, frame)
+       
     cv2.imshow('image collection', frame)
     
     if cv2.waitKey(1) & 0XFF == ord('q'):
