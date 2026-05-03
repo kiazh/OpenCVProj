@@ -14,8 +14,18 @@ NEG_PATH = os.path.join('data', 'negative')
 ANC_PATH = os.path.join('data', 'anchor')
 
 
-for directory in os.listdir('lfw'):
-    for file in os.listdir(os.path.join('lfw', directory)):
-        EX_PATH = os.path.join('lfw', directory, file)
-        NEW_PATH = os.path.join(NEG_PATH, file)
-        os.replace(EX_PATH, NEW_PATH)
+#for directory in os.listdir('lfw'):
+ #   for file in os.listdir(os.path.join('lfw', directory)):
+  ##     NEW_PATH = os.path.join(NEG_PATH, file)
+    #    os.replace(EX_PATH, NEW_PATH)
+
+cap = cv2.VideoCapture(3)
+while cap.isOpened():
+    ret, frame = cap.read()
+    
+    cv2.imshow('image collection'. frame)
+    
+    if cv2.waitKey(1) & 0XFF == ord('q'):
+        break
+cap.release()
+cv2.destroyAllWindows()
