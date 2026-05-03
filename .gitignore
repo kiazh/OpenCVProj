@@ -31,3 +31,9 @@ build/
 # Misc
 get-pip.py
 *.log
+
+# Training data images
+FacialRecgTensorFlow/data/anchor/*
+FacialRecgTensorFlow/data/positive/*
+!FacialRecgTensorFlow/data/anchor/.gitkeep
+!FacialRecgTensorFlow/data/positive/.gitkeep
