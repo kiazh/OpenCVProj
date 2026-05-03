@@ -39,3 +39,8 @@ while cap.isOpened():
         break
 cap.release()
 cv2.destroyAllWindows()
+
+anchor = tf.data.Dataset.list_files(ANC_PATH+'\*.jpg').take(3000)
+positive = tf.data.Dataset.list_files(POS_PATH+'\*.jpg').take(3000)
+negative = tf.data.Dataset.list_files(NEG_PATH+'\*.jpg').take(3000)
+dir_test = anchor.as_numpy_iterator()
