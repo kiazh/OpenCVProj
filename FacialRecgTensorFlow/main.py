@@ -22,17 +22,19 @@ ANC_PATH = os.path.join('data', 'anchor')
 cap = cv2.VideoCapture(0)
 while cap.isOpened():
     ret, frame = cap.read()
-    frame = frame[120:120+250,200:200+250, :]
+
+    frame = cv2.resize(frame, (250, 250))
+
     if cv2.waitKey(1) & 0XFF == ord('a'):
         imgname = os.path.join(ANC_PATH, '{}.jpg'.format(uuid.uuid1()))
         cv2.imwrite(imgname, frame)
-        
+
     if cv2.waitKey(1) & 0XFF == ord('p'):
         imgname = os.path.join(POS_PATH, '{}.jpg'.format(uuid.uuid1()))
         cv2.imwrite(imgname, frame)
-       
+
     cv2.imshow('image collection', frame)
-    
+
     if cv2.waitKey(1) & 0XFF == ord('q'):
         break
 cap.release()
