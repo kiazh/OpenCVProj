@@ -19,11 +19,11 @@ ANC_PATH = os.path.join('data', 'anchor')
   ##     NEW_PATH = os.path.join(NEG_PATH, file)
     #    os.replace(EX_PATH, NEW_PATH)
 
-cap = cv2.VideoCapture(3)
+cap = cv2.VideoCapture(0)
 while cap.isOpened():
     ret, frame = cap.read()
     
-    cv2.imshow('image collection'. frame)
+    cv2.imshow('image collection', frame)
     
     if cv2.waitKey(1) & 0XFF == ord('q'):
         break
