@@ -93,6 +93,8 @@ def make_embedding():
     
     return Model(inputs=[inp], outputs=[d1], name='embedding')
 
+embedding = make_embedding()
+
 class L1Dist(Layer):
     
     def __init__(self, **kwargs):
@@ -100,6 +102,8 @@ class L1Dist(Layer):
        
     def call(self, input_embedding, validation_embedding):
         return tf.math.abs(input_embedding - validation_embedding)
+
+l1 = L1Dist()
 
 def make_siamese_model(): 
     
@@ -114,6 +118,8 @@ def make_siamese_model():
     classifier = Dense(1, activation='sigmoid')(distances)
     
     return Model(inputs=[input_image, validation_image], outputs=classifier, name='SiameseNetwork')
+
+siamese_model = make_siamese_model()
 
 binary_cross_loss = tf.losses.BinaryCrossentropy()
 opt = tf.keras.optimizers.Adam(1e-4) 
