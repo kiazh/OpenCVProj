@@ -1,6 +1,6 @@
 # OpenCV Projects
 
-A collection of computer vision projects built with Python, OpenCV, and TensorFlow. Each project is self-contained with its own environment and documentation.
+A collection of computer vision projects built with Python, OpenCV, and TensorFlow.
 
 ## Projects
 
@@ -46,12 +46,3 @@ OpenCVProj/
 └── README.md                # This file
 ```
 
-## Environment
-
-Both projects share a common virtual environment (`cv_env`):
-
-```bash
-source cv_env/bin/activate
-```
-
-Python version is pinned in `.python-version` (managed by `pyenv`).
