@@ -38,3 +38,4 @@ FacialRecgTensorFlow/data/positive/*
 !FacialRecgTensorFlow/data/anchor/.gitkeep
 !FacialRecgTensorFlow/data/positive/.gitkeep
 FacialRecgTensorFlow/training_checkpoints/
+FacialRecgTensorFlow/application_data/
